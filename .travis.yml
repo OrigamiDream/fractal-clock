@@ -1,0 +1,19 @@
+language: java
+
+script: ./mvnw clean package
+
+cache:
+  directories:
+    - $HOME/.m2
+
+deploy:
+  provider: releases
+  api_key:
+    secure: CNVgEvjFSezf/H6IAyx1lftNdlRtrMZ0S0ioMWuhUT7Pf1/kdUi0BX4r0wG/Ta9gQmnyyhb9+i0xqmF5r4kJB9ATTNd+aoEbQVO+KfyK1zcl35jDAIaeabiWYpGXozZ2TCzTLdGUk0rJ1byluWYdrUciJ+YLecgkuYdxHd2VFGce/XOvdc9s90B4K/OjrPS14JVydtPz+RG/JvvKtkJrVSpaxR5SGDJjc/5sxMDW7HPlMN4RCyRgIDWN6tXjYxpDo8x9ImDAqV2nHh77yWrzoTJs7SXOqqg97085R2cPXt4J6yDBfAfMMh3I4fqoEcKQk0t8xr9ZxCIw9cIlw9l9c4JF2kRMPT1hcvPSFPUL7f4z0XfE2P1zkMBhsYIV3l5HE2A44Kc385zFkbF/2U1mUzxRnLTaA+WsaOauyK0b9kbH4wscKISnq2AZIW4hfRgJ5ig6xBeRacR/d0KoLYxZ8mA+5iebe7ARVTLRHj0y69009eG+St3Do8MxPQ8X+SLc3r/F0rFBQ2n1sLAvvTWSHsomUvdLSIeVPNhHKBz93V1f6yp0jUE5ncS+CRMdUJ6uLTZNmEPsUn16gY5WpfYrfzRoYLIbQ6jh5daNKTN54hG3K5UZgQz7s4ttVstxfS7CSCrlHPxcwAXnnOK4D0KXtSKWSiPqMdiBQ7xj63ZlgBs=
+  file_glob: true
+  file: target/FractalClock.jar
+  skip_cleanup: true
+  on:
+    tags: true
+    all_branches: true
+    repo: OrigamiDream/fractal-clock
